@@ -11,7 +11,7 @@ function UsersTable({setEditUser , handleDelete , paginatedPosts}){
 
 	// useEffect(() => {
 	// 	const fetchUsers = async () => {
-	// 		const response = await fetch("http://localhost:3000/api/users");
+	// 		const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/users`);
 	// 		const data = await response.json();
 	// 		setUsers(data);
 	// 	}

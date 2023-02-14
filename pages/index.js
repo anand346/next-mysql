@@ -34,7 +34,7 @@ export default function Home({users}) {
 
 export async function getServerSideProps(){
 
-  const response = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/users`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/users`);
   const data = await response.json();
 
   return {

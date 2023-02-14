@@ -71,7 +71,7 @@ function Layout(){
             body : JSON.stringify(editUser)
         }
         var server = process.env.SERVER ;
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/users/`+editUser.id,requestOptions);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/users/`+editUser.id,requestOptions);
         const data = await response.json();
         if(data){
             setAlertMessage("Data edited successfully");
@@ -95,7 +95,7 @@ function Layout(){
             body : JSON.stringify(saveUser)
         }
         var server = process.env.SERVER ;
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/users/`,requestOptions);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/users/`,requestOptions);
         const data = await response.json();
         // console.log(data);
         setSaveUser({
@@ -123,7 +123,7 @@ function Layout(){
             method : "DELETE"
         }
         var server = process.env.SERVER ;
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/users/`+userId,requestOptions);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/users/`+userId,requestOptions);
         const data = await response.json();
         if(data){
             setAlertMessage("Data deleted successfully");

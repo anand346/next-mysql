@@ -17,7 +17,7 @@ function Navbar({searchQuery , setSearchQuery , setAlertMessage}){
             body : JSON.stringify({ids : checkedIds})
         }
 		var server = process.env.SERVER ;
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/users/deleteMulti`,requestOptions);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/users/deleteMulti`,requestOptions);
         const data = await response.json();
         if("ids" in data){
             setAlertMessage("Data deleted successfully");
